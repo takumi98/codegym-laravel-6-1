@@ -46,4 +46,23 @@ class CtrlController extends Controller
   {
     return redirect('hello/list');
   }
+
+  public function index(Request $req)
+  {
+    return 'リクエストパス：' . $req->path();
+  }
+
+  public function form()
+  {
+    return view('ctrl.form', ['result' => '']);
+  }
+
+  public function result(Request $req)
+  {
+    // a. リクエスト情報を取得
+    $name = $req->name;
+    return view('ctrl.form', [
+      'result' => 'こんにちは、' . $name . 'さん!'
+    ]);
+  }
 }

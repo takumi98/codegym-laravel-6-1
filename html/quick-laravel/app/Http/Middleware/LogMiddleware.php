@@ -15,9 +15,12 @@ class LogMiddleware
      */
     public function handle($request, Closure $next)
     {
-        // a.ミドルウェアの実処理
+        // アクションの実行前にログを実行
         file_put_contents('/var/www/html/quick-laravel/access.log', date('Y-m-d H:i:s') . "\n", FILE_APPEND);
-        // b.次のミドルウェアを呼び出し
-        return $next($request);
+        // a.アクションを実行
+        $response = $next($request);
+        // b.レスポンスの内容を加工
+        $response->setContent(mb_strtoupper($response->content()));
+        return $response;
     }
 }

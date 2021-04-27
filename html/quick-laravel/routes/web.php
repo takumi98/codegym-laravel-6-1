@@ -51,3 +51,7 @@ Route::get('view/comp', 'ViewController@comp');
 Route::get('ctrl/form', 'CtrlController@form');
 
 Route::post('ctrl/result', 'CtrlController@result');
+
+Route::get('ctrl/upload', 'CtrlController@upload');
+
+Route::post('ctrl/uploadfile', 'CtrlController@uploadfile');

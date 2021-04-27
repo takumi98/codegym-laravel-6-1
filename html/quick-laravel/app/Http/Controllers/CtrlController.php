@@ -65,4 +65,30 @@ class CtrlController extends Controller
       'result' => 'こんにちは、' . $name . 'さん!'
     ]);
   }
+
+  public function upload()
+  {
+    return view('ctrl.upload', ['result' => '']);
+  }
+
+  public function uploadfile(Request $req)
+  {
+    // b.ファイルが指定されているかを判定
+    if (!$req->hasFile('upfile')) {
+      return 'ファイルを指定してください。';
+    }
+    // a.ファイルを取得
+    $file = $req->upfile;
+    // c.ファイルが正しくアプロード出来ているか
+    if (!$file->isValid()) {
+      return 'アップロードに失敗しました。';
+    }
+    // d.オリジナルのファイル名を取得
+    $name = $file->getClientOriginalName();
+    // e.アップロードファイルを保存
+    $file->storeAs('files', $name);
+    return view('ctrl.upload', [
+      'result' => $name . 'をアップロードしました。'
+    ]);
+  }
 }

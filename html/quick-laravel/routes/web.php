@@ -14,9 +14,10 @@
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
 use App\Http\Middleware\LogMiddleware;
 
-Route::get('/', 'CtrlController@result');
+// Route::get('ctrl/form', 'StateController@recCookie');
 
 Route::get('hello', 'HelloController@index');
 
@@ -57,5 +58,8 @@ Route::get('ctrl/upload', 'CtrlController@upload');
 
 Route::post('ctrl/uploadfile', 'CtrlController@uploadfile');
 
-Route::get('ctrl/middle', 'CtrlController@middle')
-    ->middleware(LogMiddleware::class);
+Route::get('ctrl/middle', 'CtrlController@middle');
+
+Route::group(['middleware' => ['debug']], function () {
+    Route::get('ctrl/middle', 'CtrlController@middle');
+});

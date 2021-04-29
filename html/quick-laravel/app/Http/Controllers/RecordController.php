@@ -12,4 +12,11 @@ class RecordController extends Controller
     // ddd(Book::all());
     return Book::find(1)->title;
   }
+
+  public function where()
+  {
+    $result = Book::where('publisher', '翔泳社')->get();
+    // firstなら最初の1件
+    return view('hello.list', ['records' => $result]);
+  }
 }

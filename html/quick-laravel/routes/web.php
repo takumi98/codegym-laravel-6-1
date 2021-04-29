@@ -21,7 +21,6 @@ use App\Http\Middleware\LogMiddleware;
 <<<<<<< Updated upstream
 =======
 Route::get('/', 'StateController@recCookie');
->>>>>>> Stashed changes
 
 Route::get('hello', 'HelloController@index');
 

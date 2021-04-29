@@ -18,6 +18,10 @@
 use App\Http\Middleware\LogMiddleware;
 
 // Route::get('ctrl/form', 'StateController@recCookie');
+<<<<<<< Updated upstream
+=======
+Route::get('/', 'StateController@recCookie');
+>>>>>>> Stashed changes
 
 Route::get('hello', 'HelloController@index');
 

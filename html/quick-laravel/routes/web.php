@@ -19,7 +19,8 @@ use App\Http\Middleware\LogMiddleware;
 
 // Route::get('ctrl/form', 'StateController@recCookie');
 
-Route::get('/', 'StateController@readCookie');
+// Route::get('/', 'StateController@readCookie');
+Route::get('/', 'RecordController@find');
 
 Route::get('hello', 'HelloController@index');
 

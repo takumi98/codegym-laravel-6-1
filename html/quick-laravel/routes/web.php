@@ -18,9 +18,8 @@
 use App\Http\Middleware\LogMiddleware;
 
 // Route::get('ctrl/form', 'StateController@recCookie');
-<<<<<<< Updated upstream
-=======
-Route::get('/', 'StateController@recCookie');
+
+Route::get('/', 'StateController@readCookie');
 
 Route::get('hello', 'HelloController@index');
 
@@ -66,3 +65,5 @@ Route::get('ctrl/middle', 'CtrlController@middle');
 Route::group(['middleware' => ['debug']], function () {
     Route::get('ctrl/middle', 'CtrlController@middle');
 });
+
+Route::get('state/readcookie', 'StateController@readCookie');

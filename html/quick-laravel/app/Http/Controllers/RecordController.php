@@ -19,4 +19,11 @@ class RecordController extends Controller
     // firstなら最初の1件
     return view('hello.list', ['records' => $result]);
   }
+
+  public function hasmany()
+  {
+    return view('record.hasmany', [
+      'book' => Book::find(1)
+    ]);
+  }
 }

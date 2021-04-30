@@ -68,3 +68,5 @@ Route::group(['middleware' => ['debug']], function () {
 });
 
 Route::get('state/readcookie', 'StateController@readCookie');
+
+Route::get('record/hasmany', 'RecordController@hasmany');

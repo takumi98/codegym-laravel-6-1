@@ -15,9 +15,12 @@ class SaveController extends Controller
   // フォームからの入力値をデータベースに登録
   public function store(Request $req)
   {
+    // [9.4]検証の実行
+    // $this->validate($req, Book::$rules);
     // a.モデルオブジェクトにデータを詰め替え＆保存
     $b = new Book();
     $b->fill($req->except('_token'))->save();
+    // ddd($b);
     return redirect('save/create');
   }
 

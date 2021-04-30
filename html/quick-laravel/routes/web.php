@@ -71,6 +71,9 @@ Route::get('state/readcookie', 'StateController@readCookie');
 
 Route::get('record/hasmany', 'RecordController@hasmany');
 
+// Route::post('save', 'SaveController@store');
+Route::post('save/store', 'SaveController@store');
+
 Route::get('save/create', 'SaveController@create');
 
 Route::get('save/{id}/edit', 'SaveController@edit');

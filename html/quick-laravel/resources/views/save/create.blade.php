@@ -8,7 +8,7 @@
   @endforeach
 </ul>
 @endif
-<form method="POST" action="/save">
+<form method="POST" action="/save/store">
   @csrf
   <div class="pl-2">
     <label id="isbn">ISBNコード：</label><br />

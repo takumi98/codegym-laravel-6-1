@@ -16,7 +16,7 @@ class SaveController extends Controller
   public function store(Request $req)
   {
     // [9.4]検証の実行
-    // $this->validate($req, Book::$rules);
+    $this->validate($req, Book::$rules);
     // a.モデルオブジェクトにデータを詰め替え＆保存
     $b = new Book();
     $b->fill($req->except('_token'))->save();
